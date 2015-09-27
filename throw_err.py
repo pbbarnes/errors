@@ -47,7 +47,7 @@ elif error_type == "os":
 elif error_type == "type":
     x = '2' + 2
 elif error_type == "value":
-    x = int(input("Please enter a number: "))
+    x = int("foo")
 elif error_type == "zerodivision":
     x = 1/0
 elif error_type == "StopIteration":
@@ -60,12 +60,9 @@ elif error_type == "StopIteration":
     print i.next()
 elif error_type == "GeneratorExit":
     def my_generator():
-        try:
             for i in range(5):
                 print 'Yielding', i
                 yield i
-        except GeneratorExit:
-             print 'Exiting Early'
 
     g = my_generator()
     print g.next()
